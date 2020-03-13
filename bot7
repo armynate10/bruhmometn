@@ -1,0 +1,95 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();  
+client.on('ready', () => {  
+    console.log(`Logged in as ${client.user.tag}!`);
+});
+var prefix = "//";
+client.on('message', msg => {
+    var args = msg.content.split(' ');
+   
+    if(msg.author.bot) return;
+    if (msg.content.toLowerCase() === prefix+'ping') {    
+        msg.channel.send(`Pong! API latency is ${Math.round(client.ping)} ms`);
+    }
+    if (msg.mentions.users.first() !== undefined && msg.mentions.users.first().id == client.user.id) {    
+        msg.channel.send('What do you want *human*?');
+    }
+    if (msg.content.toLowerCase() === prefix) {    
+        msg.channel.send('Specify Command or r-help for command list');
+    }
+    if (msg.content.toLowerCase() === prefix+'help') {    
+        msg.channel.send('\nCommand list:\n```r-help : This List!\nr-ping : Pong! \nr-kill (mention user) : kills the mentiond user \nr-joke : jokes \nr-v : version \nr-about : about President George W. Bush```');
+    }
+    if (msg.content.toLowerCase().startsWith(prefix+'kill')) {
+        if (msg.mentions.users.first() !== undefined ) {
+            msg.channel.send(msg.mentions.users.first().username+' was killed mercilessly');
+        } else {
+            msg.channel.send(msg.content.substring(args[0].length+1, msg.content.length)+' was killed mercilessly');  
+        }  
+   }
+    var array = ['Your Life','Not right now','Ð’Ñ‹ ÑˆÑƒÑ‚ÐºÐ°, Ð»Ð¾Ð»','***BEAN***', 'Whatâ€™s the best thing about Switzerland? \nI donâ€™t know, but the flag is a big plus.','Why do we tell actors to â€œbreak a leg?â€  \nBecause every play has a cast.','Once my dog ate all the Scrabble tiles. For days he kept leaving little messages around the house.','you are a retard'];
+    function choose(choices) {
+    var index = Math.floor(Math.random() * choices.length);
+    return choices[index];
+    }
+    if (msg.content.toLowerCase() === prefix+'joke') {    
+        msg.channel.send(choose(array));
+    }
+    if (msg.content.toLowerCase() === prefix+'v') {    
+        msg.channel.send('you think im gonna update this?');
+    }
+    if (msg.content.toLowerCase() === 'cringe') {    
+        msg.channel.send('***WARNING CRINGE NORMIE DETECTED*** \n ***DESTROY CRINGE NORMIE? YES, NO?***');{
+    }
+    if (msg.content.toLowerCase() === (prefix+'yes')) {
+        msg.channel.send('***DESTROYING CRINGE NORMIE***');
+    } else {
+    msg.channel.send('***CRINGE NORMIE DESTRUCTION CANCELED***');
+    }
+    }
+    if (msg.content.toLowerCase() === prefix+'about') {
+msg.channel.send('George Walker Bush born July 6, 1946 is an American politician and businessman who served as the 43rd president of the United States from 2001 to 2009.')    
+     }
+    if (msg.content.toLowerCase() === 'fuck') {    
+        msg.channel.send('quit fucking swearing.');
+    }
+    if (msg.content.toLowerCase() === prefix+'owner') {    
+        msg.channel.send('AgentFallen.');
+    }
+  if (msg.content.toLowerCase() === prefix+'retard'){
+    msg.channel.send("yeah you fuckin are")
+  }  
+  if (msg.content.toLowerCase() === 'i like anime'){
+ msg.channel.send('I want an anime girl to break my fucking legs')
+ }
+ if (msg.content.toLowerCase() === 'i want to die'){
+msg.channel.send('help is available, call this number if you need help: 1-800-273-8255')
+}
+if (msg.content.toLowerCase() === prefix+'seven'){
+  msg.channel.send('77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777')
+}
+if (msg.content.toLowerCase() === prefix+'simp located'){
+  msg.channel.send('fuck you, you fucking retard, you actualy bafoon, you will never have a real girlfriend unless you stop simping \n ***now***')
+}
+if (msg.content.toLowerCase() === prefix+'bruh'){
+    msg.channel.send("https://cdn.discordapp.com/attachments/669895739995979817/687702329272827910/ok.PNG")
+}
+if (msg.content.toLowerCase() === prefix+'poop'){
+  msg.channel.send("https://cdn.discordapp.com/attachments/296056831514509312/688011802604208187/image0-50.jpg")
+}
+var meme = ['https://cdn.discordapp.com/attachments/296056831514509312/688060681182117957/you_fool.gif','https://cdn.discordapp.com/attachments/296056831514509312/688060120734892067/20200313_112429.jpg','https://cdn.discordapp.com/attachments/296056831514509312/688059794728157220/image0_9.jpg', 'https://cdn.discordapp.com/attachments/296056831514509312/688059033235619880/image0-42.png', 'https://cdn.discordapp.com/attachments/296056831514509312/688058862900740219/unknown.png','https://cdn.discordapp.com/attachments/296056831514509312/688058299588935690/image0.jpg','https://cdn.discordapp.com/attachments/296056831514509312/688058269956177971/image0.jpg','https://cdn.discordapp.com/attachments/296056831514509312/688057711501377735/image0.jpg'];
+    function choose(choices) {
+    var index = Math.floor(Math.random() * choices.length);
+    return choices[index];
+    }
+    if (msg.content.toLowerCase() === prefix+'meme') {    
+        msg.channel.send(choose(meme));
+}
+if (msg.content.toLowerCase() === prefix+'kill me now') {
+  msg.channel.send('bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n bruh \n ');
+  
+}
+      
+    });
+
+client.login("")
